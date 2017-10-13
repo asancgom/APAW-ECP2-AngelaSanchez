@@ -1,17 +1,17 @@
 package asancgom.apaw.publisher.api;
 
-//import asancgom.apaw.publisher.api.resources.PublisherResource;
-//import asancgom.apaw.publisher.api.resources.RequestInvalidException;
-//import asancgom.apaw.publisher.api.resources.AuthorResource;
+import asancgom.apaw.publisher.api.resources.PublisherResource;
+import asancgom.apaw.publisher.api.resources.exceptions.RequestInvalidException;
+import asancgom.apaw.publisher.api.resources.AuthorResource;
 import asancgom.apaw.publisher.http.HttpRequest;
 import asancgom.apaw.publisher.http.HttpResponse;
 import asancgom.apaw.publisher.http.HttpStatus;
 
 public class Dispatcher {
 
-    //private PublisherResource publisherResource = new PublisherResource();
+    private PublisherResource publisherResource = new PublisherResource();
 
-    //private AuthorResource authorResource = new AuthorResource();
+    private AuthorResource authorResource = new AuthorResource();
 
     private void responseError(HttpResponse response, Exception e) {
         response.setBody("{\"error\":\"" + e + "\"}");
@@ -35,15 +35,15 @@ public class Dispatcher {
     }
 
     public void doPut(HttpRequest request, HttpResponse response) {
-       //  responseError(response, new RequestInvalidException(request.getPath()));
+        responseError(response, new RequestInvalidException(request.getPath()));
     }
 
     public void doPatch(HttpRequest request, HttpResponse response) {
-        // responseError(response, new RequestInvalidException(request.getPath()));
+        responseError(response, new RequestInvalidException(request.getPath()));
     }
 
     public void doDelete(HttpRequest request, HttpResponse response) {
-       // responseError(response, new RequestInvalidException(request.getPath()));
+       responseError(response, new RequestInvalidException(request.getPath()));
     }
 
 }
